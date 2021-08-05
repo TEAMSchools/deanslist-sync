@@ -45,7 +45,6 @@ endpoint_queries = [
     {
         "name": "roster_assignments",
         "path": "beta/export/get-roster-assignments.php",
-        # "parameters": {"rt": ""},
     },
     {
         "name": "incidents",
