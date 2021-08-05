@@ -11,6 +11,7 @@ from dateutil.relativedelta import relativedelta
 from dotenv import load_dotenv
 from google.cloud import storage
 
+from datarobot.utilities import email
 from settings import current_academic_year, endpoint_queries, first_academic_year
 
 load_dotenv()
@@ -120,6 +121,11 @@ def main(school, queries):
                 print(f"\t\tUploaded to {destination_blob_name}!")
         except Exception as xc:
             print(xc)
+
+            email_subject = f"DeansList Extract Error - {school_name} {endpt_name}"
+            email_body = f"\n\n{traceback.format_exc()}"
+            email.send_email(subject=email_subject, body=email_body)
+
             continue
 
 
