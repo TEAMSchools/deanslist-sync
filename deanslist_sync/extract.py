@@ -8,13 +8,10 @@ from datetime import datetime
 
 import requests
 from dateutil.relativedelta import relativedelta
-from dotenv import load_dotenv
 from google.cloud import storage
 
 from datarobot.utilities import email
 from settings import current_academic_year, endpoint_queries, first_academic_year
-
-load_dotenv()
 
 GCS_BUCKET_NAME = os.getenv("GCS_BUCKET_NAME")
 INSTANCE_NAME = os.getenv("INSTANCE_NAME")
@@ -107,12 +104,12 @@ def main(school, queries):
                     data_filename = f"{endpt_name}_{school_name}.json.gz"
                 data_filepath = data_path / data_filename
 
-                ## save to json.gz
+                # save to json.gz
                 with gzip.open(data_filepath, "wt", encoding="utf-8") as f:
                     json.dump(endpt_data, f)
                 print(f"\t\tSaved to {'/'.join(data_filepath.parts[-5:])}!")
 
-                ## upload to GCS
+                # upload to GCS
                 destination_blob_name = (
                     f"deanslist/{'/'.join(data_filepath.parts[-4:])}"
                 )
