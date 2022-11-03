@@ -26,15 +26,6 @@ endpoint_queries = [
         "parameters": {"show_inactive": "Y"},
     },
     {
-        "name": "communication",
-        "path": "beta/export/get-comm-data.php",
-        "parameters": {
-            "UpdatedSince": updated_since_strf,
-            "IncludeDeleted": "Y",
-            "IncludePrevEnrollments": "Y",
-        },
-    },
-    {
         "name": "followups",
         "path": "v1/followups",
     },
@@ -51,6 +42,15 @@ endpoint_queries = [
             "StartDate": ay_start_date,
             "EndDate": ay_end_date,
             "IncludeDeleted": "Y",
+        },
+    },
+    {
+        "name": "communication",
+        "path": "beta/export/get-comm-data.php",
+        "parameters": {
+            "UpdatedSince": updated_since_strf,
+            "IncludeDeleted": "Y",
+            "IncludePrevEnrollments": "Y",
         },
     },
     {

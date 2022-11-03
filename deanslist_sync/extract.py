@@ -11,6 +11,7 @@ from dateutil.relativedelta import relativedelta
 from google.cloud import storage
 
 from datarobot.utilities import email
+
 from settings import current_academic_year, endpoint_queries, first_academic_year
 
 GCS_BUCKET_NAME = os.getenv("GCS_BUCKET_NAME")
