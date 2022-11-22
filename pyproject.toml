@@ -7,11 +7,13 @@ authors = [
 ]
 license-expression = "MIT"
 dependencies = [
-  "requests>=2.27.1",
-  "google-cloud-storage>=2.2.1",
-  "python-dateutil>=2.8.2",
+    "requests>=2.27.1",
+    "google-cloud-storage>=2.2.1",
+    "python-dateutil>=2.8.2",
+    "datarobot @ file:///${PROJECT_ROOT}/../datarobot",
 ]
 requires-python = ">=3.9"
+dynamic = ["dependencies"]
 
 [project.urls]
 Homepage = ""
